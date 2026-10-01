@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Estudio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <div class="topbar">
+      <h1>Hola, <span id="nombre-usuario"></span></h1>
+      <button class="secundario" id="btn-cerrar-sesion">Cerrar sesión</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-boton activo" data-tab="tab-sesion">Sesión de estudio</button>
+      <button class="tab-boton oculto" id="tab-admin-boton" data-tab="tab-admin">Administrar usuarios</button>
+    </div>
+
+    <div id="tab-sesion" class="tab-contenido">
+      <div class="tarjeta">
+        <h2>Sesión de estudio</h2>
+        <button id="btn-iniciar-sesion-estudio">Iniciar sesión de estudio</button>
+        <button id="btn-terminar-sesion-estudio" class="peligro oculto">Terminar sesión</button>
+
+        <div id="panel-contadores" class="oculto"></div>
+      </div>
+
+      <div id="panel-resumen" class="tarjeta oculto"></div>
+    </div>
+
+    <div id="tab-admin" class="tab-contenido oculto">
+      <div class="tarjeta">
+        <h2>Crear usuario</h2>
+        <form id="form-crear-usuario">
+          <label for="admin-nombre">Nombre completo</label>
+          <input type="text" id="admin-nombre" required>
+
+          <label for="admin-username">Usuario</label>
+          <input type="text" id="admin-username" required>
+
+          <label for="admin-password">Contraseña</label>
+          <input type="password" id="admin-password" minlength="6" required>
+
+          <label for="admin-rol">Rol</label>
+          <select id="admin-rol">
+            <option value="usuario">Usuario</option>
+            <option value="admin">Administrador</option>
+          </select>
+
+          <button type="submit">Crear usuario</button>
+        </form>
+      </div>
+
+      <div class="tarjeta">
+        <h2>Usuarios registrados</h2>
+        <table>
+          <thead>
+            <tr><th>Usuario</th><th>Nombre</th><th>Rol</th><th>Estado</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="tabla-usuarios-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

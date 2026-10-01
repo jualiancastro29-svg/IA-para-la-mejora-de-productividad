@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoreo de Estudio - Ingresar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Monitoreo de Sesiones de Estudio</h1>
+
+    <div id="seccion-login" class="tarjeta">
+      <h2>Iniciar sesión</h2>
+      <form id="form-login">
+        <label for="login-username">Usuario</label>
+        <input type="text" id="login-username" required>
+
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" required>
+
+        <button type="submit">Ingresar</button>
+        <div id="error-login" class="mensaje-error"></div>
+      </form>
+      <p>¿No tienes cuenta? <a href="#" id="mostrar-registro">Regístrate aquí</a></p>
+    </div>
+
+    <div id="seccion-registro" class="tarjeta oculto">
+      <h2>Crear cuenta</h2>
+      <form id="form-registro">
+        <label for="reg-nombre">Nombre completo</label>
+        <input type="text" id="reg-nombre" required>
+
+        <label for="reg-username">Usuario</label>
+        <input type="text" id="reg-username" required>
+
+        <label for="reg-password">Contraseña</label>
+        <input type="password" id="reg-password" minlength="6" required>
+
+        <button type="submit">Crear cuenta</button>
+        <div id="error-registro" class="mensaje-error"></div>
+      </form>
+      <p>¿Ya tienes cuenta? <a href="#" id="mostrar-login">Inicia sesión</a></p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
